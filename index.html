@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator in Js</title>
+
+    <!-- Normalize Css -->
+    <link rel="preload" href="styles/normalize.css" as="style" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
+
+    <!-- Styles Css -->
+    <link rel="preload" href="styles/styles.css" as="style" />
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body class="">
+
+    <main class="app">
+        <header class="headerCalc">
+            <h1>calc</h1>
+
+            <div class="theme--side">
+                <h3>theme</h3>
+                <div>
+                    <div class="number--tap">
+                        <p>1</p>
+                        <p>2</p>
+                        <p>3</p>
+                    </div>
+                    <div class="radio--tap">
+                        <input type="radio" name="theme" id="theme--1" checked>
+                        <input type="radio" name="theme" id="theme--2">
+                        <input type="radio" name="theme" id="theme--3">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <h2 class="resultBox" id="result">0</h2>
+
+        <div id="buttons" class="buttons">
+            <!-- 7 - 8 - 9 - Del -->
+            <input class="button" type="button" value="7"/>
+            <input class="button" type="button" value="8"/>
+            <input class="button" type="button" value="9"/>
+            <input class="button del" type="button" value="Del"/>
+
+            <!-- 4 - 5 - 6 - + -->
+            <input class="button" type="button" value="4" />
+            <input class="button" type="button" value="5" />
+            <input class="button" type="button" value="6" />
+            <input class="button" type="button" value="+" />
+
+            <!-- 1 - 2 - 3 - - -->
+            <input class="button" type="button" value="1" />
+            <input class="button" type="button" value="2" />
+            <input class="button" type="button" value="3" />
+            <input class="button" type="button" value="-" />
+
+            <!-- . - 0 - / - x -->
+            <input class="button" type="button" value="." />
+            <input class="button" type="button" value="0" />
+            <input class="button" type="button" value="/" />
+            <input class="button" type="button" value="x" />
+            
+            <!-- reset - = -->
+            <input class="button reset" type="button" value="Reset" />
+            <input class="button equal" type="button" value="=" />
+        </div>
+    </main>
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Javier Andrés Álvarez Falquez</a>.
+    </div>
+
+    <script src="js/app.js" type="module"></script>
+</body>
+
+</html>

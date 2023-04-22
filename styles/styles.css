@@ -1,0 +1,238 @@
+/* *******************************************
+               Custom Properties
+******************************************* */
+:root{
+    /* ***************************************
+                    Colors 
+    ************************************** */
+    /* Theme1 */
+    /* Backgrounds */
+    --mainBg: hsl(222, 26%, 31%); /*(main background)*/
+    --keyPad: hsl(223, 31%, 20%); /*(toggle background, keypad background)*/
+    --screen: hsl(224, 36%, 15%); /*(screen background)*/
+
+    /* Keys */
+    --keyBg: hsl(225, 21%, 49%); /*(key background)*/
+    --keyShadowRD: hsl(224, 28%, 35%); /*(key shadow)*/
+    --equal: hsl(6, 63%, 50%); /*(key background, toggle)*/
+    --darkEqual: hsl(6, 70%, 34%); /*(key shadow)*/
+    --key: hsl(30, 25%, 89%); /*(key background)*/
+    --keyShadow: hsl(28, 16%, 65%); /*(key shadow)*/
+    --keyText: hsl(221, 14%, 31%);
+
+    /* Text */ 
+    --text: hsl(0, 0%, 100%);
+    --white: hsl(0, 0%, 100%);
+
+    /* ***************************************
+                    Fonts 
+    ************************************** */
+    --font: 'League Spartan', sans-serif;
+}
+
+
+.theme--2{
+    --mainBg: hsl(0, 0%, 90%);
+    --keyPad: hsl(0, 5%, 81%);
+    --screen: hsl(0, 0%, 93%);
+
+    /* Keys */
+    --keyBg: hsl(185, 42%, 37%);
+    --keyShadowRD: hsl(185, 58%, 25%);
+    --equal: hsl(25, 98%, 40%);
+    --darkEqual: hsl(25, 99%, 27%);
+    --key: hsl(45, 7%, 89%);
+    --keyShadow: hsl(35, 11%, 61%);
+
+    /* Text */
+    --text: hsl(221, 14%, 31%);
+}
+
+.theme--3{
+    --mainBg: hsl(268, 75%, 9%);
+    --keyPad: hsl(268, 71%, 12%);
+    --screen: hsl(268, 71%, 12%);
+
+    /* Keys */
+    --keyBg: hsl(281, 89%, 26%);
+    --keyShadowRD: hsl(285, 91%, 52%);
+    --equal: hsl(176, 100%, 44%);
+    --darkEqual: hsl(177, 92%, 70%);
+    --key: hsl(268, 47%, 21%);
+    --keyShadow: hsl(290, 70%, 36%);
+
+    /* Text */
+    --text: hsl(52, 100%, 62%);
+    --keyText: hsl(52, 100%, 62%);
+}
+
+/* *******************************************
+                   Globals
+******************************************* */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 2.2rem;
+    font-family: var(--font);
+    background-color: var(--mainBg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background-color .5s;
+}
+
+h1,h2,h3, p{
+    margin: 0;
+    color: var(--text);
+}
+
+h3{
+    padding-right: 1.5rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* *******************************************
+                  Utilities
+******************************************* */
+/* Container App */
+.app{
+    width: 95%;
+    max-width: 40rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+/* *******************************************
+                    Styles
+******************************************* */
+/* Header */
+.headerCalc{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 1.5rem 0;
+}
+
+.theme--side{
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.4rem;
+}
+
+.number--tap,
+.radio--tap{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+}
+
+.radio--tap{
+    padding: .3rem ;
+    background-color: var(--screen);
+    border-radius: 10px;
+}
+
+input[type=radio]{
+    cursor: pointer;
+    position: relative;
+    background-color: var(--equal);
+}
+
+/* Calculator */
+.resultBox{
+    background-color: var(--screen);
+    color: var(--text);
+    padding: 1.5rem 1rem 1.2rem 1rem;
+    text-align: right;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    overflow-x: auto;
+}
+
+.buttons{
+    background-color: var(--keyPad);
+    padding: 1.5rem;
+    border-radius: 5px;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.button{
+    padding: .5rem 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--key);
+    box-shadow: 0px 2px 0px var(--keyShadow);
+    cursor: pointer;
+    color: var(--keyText);
+    transition: background-color .5s, box-shadow .5s;
+}
+
+.button:hover{
+    background-color: var(--keyShadow);
+    box-shadow: var(--key);
+}
+
+.reset, .del, .equal{
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.reset, .del{
+    background-color: var(--keyBg);
+    font-size: 1.8rem;
+    box-shadow: 0px 2px 0px var(--keyShadowRD);
+}
+
+.reset:hover, .del:hover{
+    background-color: var(--keyShadowRD);
+    box-shadow: var(--keyBg);
+}
+
+.reset{
+    grid-column: 1/3;
+}
+
+.equal{
+    grid-column: 3/5;
+    background-color: var(--equal);
+    box-shadow: 0px 2px 0px var(--darkEqual);
+}
+
+.equal:hover{
+    background-color: var(--darkEqual);
+    box-shadow: 0px 2px 0px var(--equal);
+}
+
+.attribution{
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    background-color: var(--keyPad);
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 1rem .5rem;
+    color: var(--text);
+}
+
+
+.attribution a{
+    color: var(--equal);
+}
